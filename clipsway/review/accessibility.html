@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="referrer" content="no-referrer">
+<title>Clipsway - Accessibility review</title>
+<meta name="description" content="Play or download the Clipsway Accessibility review recording without signing in.">
+<link rel="canonical" href="https://spenserlucy.github.io/app-policies/clipsway/review/accessibility.html">
+<style>
+:root { color-scheme: light; --ink:#18283d; --muted:#526176; --blue:#075ecf;
+  --paper:#fff; --line:#d6e0ec; --wash:#f2f3f6; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; scroll-padding-top:1.5rem; }
+body { margin:0; color:var(--ink); background:linear-gradient(145deg,#e7effc,var(--wash) 28rem);
+  font-family:"Trebuchet MS","Noto Sans",sans-serif; font-size:1rem; line-height:1.75; }
+a { color:var(--blue); overflow-wrap:anywhere; text-underline-offset:.2em; }
+a:focus-visible, video:focus-visible { outline:3px solid var(--blue); outline-offset:4px; }
+.shell { max-width:58rem; margin:auto; padding:2rem 1.25rem 3rem; }
+header { display:flex; flex-wrap:wrap; gap:.75rem 2rem; justify-content:space-between;
+  align-items:center; margin-bottom:1.5rem; }
+.brand { color:var(--ink); font-weight:bold; text-decoration:none; letter-spacing:.04em; }
+nav { display:flex; flex-wrap:wrap; gap:1rem; font-size:.95rem; }
+main { background:var(--paper); border:1px solid var(--line); border-top:5px solid var(--blue);
+  border-radius:1rem; padding:clamp(1.25rem,4vw,3rem); box-shadow:0 15px 50px #18283d08; }
+h1,h2 { line-height:1.3; font-family:Georgia,"Noto Serif",serif; }
+h1 { font-size:clamp(1.8rem,5vw,2.6rem); margin:0 0 1.5rem; overflow-wrap:anywhere; }
+h2 { font-size:1.3rem; margin:2.25rem 0 .75rem; }
+p { margin:.85rem 0; }
+ul { padding-left:1.4rem; }
+li { margin:.45rem 0; }
+video { display:block; width:100%; max-width:24rem; height:auto; max-height:75vh;
+  margin:1.5rem auto; background:#000; border-radius:.5rem; object-fit:contain; }
+.metadata { color:var(--muted); font-size:.95rem; }
+footer { margin-top:1.5rem; color:var(--muted); font-size:.875rem; }
+@media (max-width:480px) { .shell { padding:1rem .75rem 2rem; } main { border-radius:.6rem; } }
+@media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+</style>
+</head>
+<body>
+<div class="shell">
+<header><span class="brand">Clipsway - App review</span><nav aria-label="Review recordings"><a href="./">All review recordings</a></nav></header>
+<main>
+<h1>Accessibility review</h1>
+<p>Clipsway 0.1.2 (version code 26), closed-test edition.</p>
+<p>Public playback and download. No account or sign-in is required.</p>
+<video controls playsinline preload="metadata" aria-label="Clipsway Accessibility review recording">
+<source src="accessibility-review-20261024.mp4" type="video/mp4">
+Your browser does not support embedded playback. Use the MP4 download link.
+</video>
+<p><a href="accessibility-review-20261024.mp4" download="accessibility-review-20261024.mp4">Download the Accessibility review MP4</a></p>
+<p class="metadata">Duration: 231 seconds (3 minutes 51 seconds). H.264 MP4, 1080 x 2400, 30 fps, 7.2 MiB. The recording is silent.</p>
+<h2>Demonstrated flow</h2>
+<ul>
+<li>Open Clipsway and withdraw its in-app toolbar consent; the toolbar shows Not enabled.</li>
+<li>Open the disclosure, use Cancel, see Not enabled, then open the disclosure again.</li>
+<li>Read all six paragraphs of the in-app Accessibility disclosure in the captured app UI.</li>
+<li>Tap Agree, open Android Accessibility settings, use Allow in the system prompt and verify the service is On.</li>
+<li>Open the toolbar History beside an external app's empty editor, paste saved record A and use Select all.</li>
+</ul>
+<h2>Recording context</h2>
+<p>The video combines real recordings from separate takes at normal speed. Cuts remove idle waits; it is not presented as an uninterrupted first-install session.</p>
+<p>Section cards announce changes between takes. These are explanatory editorial cards, not captured app UI or a substitute for the in-app disclosure. The captured disclosure is not artificially frozen or extended.</p>
+<p>The History opening and paste/Select all demonstrations are separate takes; the latter starts with History already open. The consent withdrawal shown is inside Clipsway, not a demonstration of Android Accessibility service revocation.</p>
+</main>
+<footer>Published 24 October 2026.</footer>
+</div>
+</body>
+</html>
