@@ -52,7 +52,7 @@ footer { margin-top:1.5rem; color:var(--muted); font-size:.875rem; }
 <h2>Local information and purpose</h2>
 <p>Clipsway is a local clipboard history and text-input utility. It stores text you save, optional titles, creation/use times, favorites and categories. A content digest, search copy and link indicator support matching and search.</p>
 <p>You may create records, share selected text to Clipsway or import a backup through the system file picker. It does not automatically read another app&#x27;s private storage.</p>
-<p>Local settings include language, appearance, history capacity, feature settings, recording choices, toolbar consent/rules and tutorial progress. Toolbar rules include application package names; up to 64 application-specific positions may be remembered.</p>
+<p>Local settings include language, appearance, history capacity, feature settings, recording choices and a boot-count checkpoint for recovery, toolbar consent/rules and tutorial progress. Toolbar rules include application package names; up to 64 application-specific positions may be remembered.</p>
 <h2>Trial and Google Play purchases</h2>
 <p>The app is free to download. A locally managed 7-day Pro trial starts on the first app launch for this installation. It does not automatically charge you or become a subscription. Trial timing, the last observed device time and boot/elapsed-time checkpoints are stored privately on the device. Clearing app data or reinstalling can reset this local trial; it is not an account-based, first-ever-download eligibility service.</p>
 <p>Pro is a non-consumable, one-time purchase through Google Play. The app receives signed purchase information, including the product/package identifiers, purchase token, purchase time and purchase state. It verifies and stores the signed receipt locally to restore access across app launches, and asks Google Play to confirm delivery. It does not send the receipt, your history or your settings to a developer-operated server. Temporary connection failures do not by themselves cancel a saved, verified purchase. A later successful Google Play ownership check may remove access after a purchase is revoked.</p>
@@ -64,7 +64,8 @@ footer { margin-top:1.5rem; color:var(--muted); font-size:.875rem; }
 <p>A privileged Shizuku service monitors subsequent system clipboard changes for eligible single ordinary-text items. No text field, keyboard or toolbar needs to be visible. It does not read clipboard content already present before that recording session.</p>
 <p>Sensitive-marked content, images, files, URI/intent and multiple-item clips, blank/oversized text and Clipsway&#x27;s own clipboard writes are skipped. Sensitive markings depend on Android and the source app and cannot identify every password or verification code. Stop recording before copying private material.</p>
 <p>Recording is global: toolbar allow/block lists do not limit it. It pauses while locked and does not recover missed content. A visible ongoing notification and the Connection page provide Stop.</p>
-<p>Clipsway remembers your explicit recording choice and attempts to restore it after an app update, only when Shizuku, permission and notifications permit. Ordinary app launches, normal disconnections and unrelated process exits do not newly start recording; it does not start recording at boot. Opening Clipsway may continue an already pending update recovery. Stop clears the saved choice and pending recovery, not existing records.</p>
+<p>Clipsway remembers your explicit recording choice and may restore it after an app update. After you accept the recording disclosure that includes restart recovery, a phone restart may also restore your saved enabled choice if you have not cancelled it with Stop. Choices saved before this behavior was introduced require one confirmation of the updated disclosure; you do not need to stop an active session first or confirm after each restart. Restart recovery is considered after normal boot completion, usually after the first unlock, not during locked boot.</p>
+<p>Recovery still requires Shizuku, existing authorization and visible notifications. Clipsway does not start Shizuku or grant permission for you. Android background-start restrictions may prevent immediate recovery; opening Clipsway can retry pending recovery. Ordinary app launches, normal disconnections, revoked permission and process exits within the same boot do not newly enable recording when no recovery is pending. Recovery does not read existing clipboard content or recover missed text. Stop clears the saved enabled choice and pending recovery, not existing records.</p>
 <h2>Optional Accessibility toolbar</h2>
 <p>The toolbar requires a separate disclosure and explicit consent. It is an input utility, not an accessibility tool primarily designed for people with disabilities.</p>
 <p>It accesses the current application package, window/keyboard positions and editor state/position to show the toolbar and verify actions you tap. Text-change events temporarily hide the toolbar; their text is not collected or saved. Select all checks the current text length. On Android 13+, the current input session/connection validates the target and requests user-tapped paste, select all, undo or redo.</p>
@@ -108,7 +109,7 @@ footer { margin-top:1.5rem; color:var(--muted); font-size:.875rem; }
 <h2>本地处理的信息与用途</h2>
 <p>随贴是一款本地剪贴板历史与文字输入工具。它保存您选择保存的正文、可选标题、创建与使用时间、收藏和分类。内容摘要、搜索副本和链接标记用于去重、检索与展示。</p>
 <p>您可以新建记录、将选中文字分享给随贴，或通过系统文件选择器导入备份。应用不会自动读取其他应用的私有存储。</p>
-<p>本地设置包括语言、外观、历史容量、功能设置、自动收录选择、浮条同意与规则、教程进度。浮条规则包含应用包名；最多可记住 64 个应用的专属位置。</p>
+<p>本地设置包括语言、外观、历史容量、功能设置、自动收录选择与恢复所需的开机次数检查点、浮条同意与规则、教程进度。浮条规则包含应用包名；最多可记住 64 个应用的专属位置。</p>
 <h2>试用与 Google Play 购买</h2>
 <p>应用可免费下载，本次安装首次启动时开始本地管理的 7 天 Pro 试用。试用不会自动扣费，也不会转为订阅。试用时间、上次记录的设备时间、开机次数与单调计时检查点保存在应用私有的本地存储中。清除应用数据或重新安装可能重置本地试用；它不是基于账号的“首次下载终身只试用一次”资格服务。</p>
 <p>Pro 通过 Google Play 进行非消耗型、一次性购买。应用接收带签名的购买信息，包括商品与包名标识、购买令牌、购买时间与状态；在本地核验并保存签名回执，以便跨应用启动恢复权益，并向 Google Play 确认权益已交付。回执、历史记录和设置不会传送到开发者运营的服务器。暂时的连接失败本身不会取消已保存且通过核验的购买；购买被撤销后，之后成功的 Google Play 所有权查询可能移除权益。</p>
@@ -120,7 +121,8 @@ footer { margin-top:1.5rem; color:var(--muted); font-size:.875rem; }
 <p>具有特权的 Shizuku 服务监听之后发生的系统剪贴板变化，只处理符合规则的单条普通文字。此时不要求文字输入框、键盘或浮条可见。它不会读取本次收录会话开始之前已存在的剪贴板内容。</p>
 <p>应用跳过带敏感标记的内容、图片、文件、URI/Intent、多条目剪贴板、空白或过长文字，以及随贴自身写入的剪贴板内容。敏感标记依赖 Android 和来源应用，无法识别全部密码或验证码。复制私密信息前请停止收录。</p>
 <p>收录作用于系统剪贴板，浮条的应用允许或屏蔽名单不限制收录范围。锁屏期间暂停，不补录遗漏内容。持续可见的通知和连接页面均提供停止入口。</p>
-<p>随贴记住您明确选择的收录状态，并在应用更新后、Shizuku、授权和通知条件允许时尝试恢复。普通启动、正常断开或无关的进程退出不会新增开启行为；设备开机时不会启动收录。打开随贴可以继续已存在的待更新恢复。停止收录会清除开启选择与待恢复状态，不会删除已有记录。</p>
+<p>随贴记住您明确选择的收录状态，可在应用更新后尝试恢复。您同意包含重启恢复的收录说明后，手机重启也可按条件恢复已保存且未点击停止取消的开启选择。此前保存的选择需确认一次更新后的说明；不必先停止正在运行的收录，也无需每次重启都确认。重启恢复仅在普通开机完成后处理，通常在首次解锁后，不在解锁前启动。</p>
+<p>恢复仍需 Shizuku、既有授权及可见通知就绪，随贴不替您启动 Shizuku 或授予权限。Android 后台启动限制可能阻止立即恢复，此时可打开随贴重试待恢复操作。没有待恢复操作时，普通启动、正常断开、权限撤回及同一次开机内的进程退出不会新增自动开启。恢复不读取当时已有的剪贴板，也不补录空档中的文字。停止收录会清除开启选择与待恢复状态，不会删除已有记录。</p>
 <h2>可选的无障碍浮条</h2>
 <p>浮条需要单独披露并取得明确同意。它是输入工具，不是主要面向残障人士设计的无障碍辅助工具。</p>
 <p>浮条访问当前应用包名、窗口与键盘位置、编辑器状态与位置，用于显示浮条并核验您点击操作的目标。文字变化事件仅用于暂时隐藏浮条，不收集或保存事件中的文字。全选会检查当前文字长度。Android 13 及以上版本使用当前输入会话与连接核验目标，执行您点击的粘贴、全选、撤销或恢复。</p>
